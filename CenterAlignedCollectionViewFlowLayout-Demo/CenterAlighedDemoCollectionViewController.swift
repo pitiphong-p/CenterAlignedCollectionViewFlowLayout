@@ -14,7 +14,8 @@ private let reuseIdentifier = "Cell"
 class CenterAlighedDemoCollectionViewController: UICollectionViewController {
   
   override func viewDidLoad() {
-    collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+//     Usage example: using CenterAlignedCollectionViewFlowLayout via code
+//    collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
   }
   
   // MARK: UICollectionViewDataSource
