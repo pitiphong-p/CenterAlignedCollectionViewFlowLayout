@@ -10,9 +10,10 @@ import UIKit
 
 public class CenterAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
   public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-    guard let attributes = super.layoutAttributesForElementsInRect(rect) else {
+    guard let oldAttributes = super.layoutAttributesForElementsInRect(rect) else {
       return nil
     }
+    let attributes = oldAttributes.map { $0.copy() as! UICollectionViewLayoutAttributes }
     
     // We will do centering alignment only on the Cell layout attributes
     let cellAttributes = attributes.filter({ (layout: UICollectionViewLayoutAttributes) -> Bool in
