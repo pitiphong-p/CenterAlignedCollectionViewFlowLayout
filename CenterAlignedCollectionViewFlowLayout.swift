@@ -13,11 +13,7 @@ public class CenterAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
     guard let oldAttributes = super.layoutAttributesForElementsInRect(rect) else {
       return nil
     }
-    
-    let attributes: [UICollectionViewLayoutAttributes] = oldAttributes.flatMap {
-        $0.copy() as? UICollectionViewLayoutAttributes
-    }
-
+    let attributes = oldAttributes.map { $0.copy() as! UICollectionViewLayoutAttributes }
     
     // We will do centering alignment only on the Cell layout attributes
     let cellAttributes = attributes.filter({ (layout: UICollectionViewLayoutAttributes) -> Bool in
