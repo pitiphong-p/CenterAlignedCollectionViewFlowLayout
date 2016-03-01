@@ -14,11 +14,8 @@ public class CenterAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
       return nil
     }
     
-    var attributes = [UICollectionViewLayoutAttributes]()
-    for attr in oldAttributes{
-      if let attribute = attr.copy() as? UICollectionViewLayoutAttributes{
-          attributes.append(attribute)
-      }
+    let attributes: [UICollectionViewLayoutAttributes] = oldAttributes.flatMap {
+        $0.copy() as? UICollectionViewLayoutAttributes
     }
 
     
