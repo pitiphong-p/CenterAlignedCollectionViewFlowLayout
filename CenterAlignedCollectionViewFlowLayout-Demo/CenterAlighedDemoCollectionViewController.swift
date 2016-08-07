@@ -20,15 +20,15 @@ class CenterAlighedDemoCollectionViewController: UICollectionViewController {
   
   // MARK: UICollectionViewDataSource
   
-  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of items
     return 100
   }
   
-  override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! Cell
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! Cell
     
-    cell.label.text = "\(indexPath.row + 1)"
+    cell.label.text = "\((indexPath as NSIndexPath).row + 1)"
     
     return cell
   }
@@ -36,7 +36,7 @@ class CenterAlighedDemoCollectionViewController: UICollectionViewController {
 }
 
 extension CenterAlighedDemoCollectionViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: CGFloat(arc4random_uniform(60)) + 60.0, height: 40.0)
   }
 }
