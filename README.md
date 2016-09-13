@@ -3,7 +3,7 @@ A UICollectionViewFlowLayout subclass that centers its cell to center.
 
 # Requirements
 - iOS 8+
-- Swift 2.0+
+- Swift 3.0+
 
 This requirement is due to the Swift runtime is available on iOS 8 or later. If you want to use this `CenterAlignedCollectionViewFlowLayout`.
 
@@ -20,6 +20,9 @@ Add the following to your Podfile
 pod 'CenterAlignedCollectionViewFlowLayout'
 use_frameworks!
 ````
+
+## Swift 2
+You can use CenterAlignedCollectionViewFlowLayout in Swift 2.2 by checking out tag `0.5.0` 
 
 # Usage
 You can set the collecion view's layout to an instance of `CenterAlignedCollectionViewFlowLayout`, that's all. You can set its layout both via code or `Storyboard`.

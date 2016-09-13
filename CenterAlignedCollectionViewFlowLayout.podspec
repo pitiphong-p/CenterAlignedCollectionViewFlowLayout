@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CenterAlignedCollectionViewFlowLayout"
-  s.version      = "0.5.0"
+  s.version      = "0.6.0"
   s.summary      = "A UICollectionViewFlowLayout subclass that will center its cells."
 
   s.homepage     = "https://github.com/pitiphong-p/CenterAlignedCollectionViewFlowLayout"
