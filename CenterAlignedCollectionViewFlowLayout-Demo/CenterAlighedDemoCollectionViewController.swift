@@ -14,15 +14,18 @@ private let reuseIdentifier = "Cell"
 class CenterAlighedDemoCollectionViewController: UICollectionViewController {
   
   override func viewDidLoad() {
-//     Usage example: using CenterAlignedCollectionViewFlowLayout via code
+    super.viewDidLoad()
+//    Usage example: using CenterAlignedCollectionViewFlowLayout via code
 //    collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
   }
   
   // MARK: UICollectionViewDataSource
   
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 3
+  }
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
-    return 100
+    return 20
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

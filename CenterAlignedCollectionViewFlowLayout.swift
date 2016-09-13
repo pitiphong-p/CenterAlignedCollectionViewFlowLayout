@@ -55,7 +55,7 @@ private struct RowAttributes {
   var height: CGFloat
   
   func contains(_ rect: CGRect) -> Bool {
-    return rect.maxY >= self.y && rect.minY <= (self.y + self.height)
+    return rect.maxY > self.y && rect.minY < (self.y + self.height)
   }
   func attributeByUnionRect(_ rect: CGRect) -> RowAttributes {
     let y = min(self.y, rect.minY)
