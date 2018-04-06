@@ -15,8 +15,14 @@ class CenterAlighedDemoCollectionViewController: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    Usage example: using CenterAlignedCollectionViewFlowLayout via code
-//    collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+    // Usage example: using CenterAlignedCollectionViewFlowLayout via code
+    // collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
+    if #available(iOS 10.0, *) {
+      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).itemSize = UICollectionViewFlowLayoutAutomaticSize
+      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+    } else {
+      // Fallback on earlier versions
+    }
   }
   
   // MARK: UICollectionViewDataSource
@@ -31,18 +37,18 @@ class CenterAlighedDemoCollectionViewController: UICollectionViewController {
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! Cell
     
-    cell.label.text = "\((indexPath as NSIndexPath).row + 1)"
+    cell.label.text = String.init(repeating: "A", count: 5 * Int(arc4random_uniform(40)))
     
     return cell
   }
   
 }
 
-extension CenterAlighedDemoCollectionViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: CGFloat(arc4random_uniform(60)) + 60.0, height: 40.0)
-  }
-}
+//extension CenterAlighedDemoCollectionViewController: UICollectionViewDelegateFlowLayout {
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    return CGSize(width: CGFloat(arc4random_uniform(60)) + 320.0, height: 40.0)
+//  }
+//}
 
 
 class Cell: UICollectionViewCell {
