@@ -18,8 +18,8 @@ class CenterAlighedDemoCollectionViewController: UICollectionViewController {
     // Usage example: using CenterAlignedCollectionViewFlowLayout via code
     // collectionView?.collectionViewLayout = CenterAlignedCollectionViewFlowLayout()
     if #available(iOS 10.0, *) {
-      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).itemSize = UICollectionViewFlowLayoutAutomaticSize
-      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).itemSize = UICollectionViewFlowLayout.automaticSize
+      (collectionView?.collectionViewLayout as! CenterAlignedCollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     } else {
       // Fallback on earlier versions
     }
