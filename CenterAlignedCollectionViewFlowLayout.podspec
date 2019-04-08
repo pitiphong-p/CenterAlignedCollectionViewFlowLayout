@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CenterAlignedCollectionViewFlowLayout"
-  s.version      = "0.6.1"
+  s.version      = "0.6.2"
   s.summary      = "A UICollectionViewFlowLayout subclass that will center its cells."
 
   s.homepage     = "https://github.com/pitiphong-p/CenterAlignedCollectionViewFlowLayout"
@@ -12,5 +12,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/pitiphong-p/CenterAlignedCollectionViewFlowLayout.git", :tag => s.version }
   s.source_files  = "CenterAlignedCollectionViewFlowLayout.swift"
+
+  s.xcconfig = { 'SWIFT_VERSION' => '4.2' }
 
 end
