@@ -25,6 +25,8 @@ use_frameworks!
 You can use CenterAlignedCollectionViewFlowLayout in Swift 2.2 by checking out tag `0.5.0` 
 ## Swift 4.0
 You can use CenterAlignedCollectionViewFlowLayout in Swift 2.2 by checking out tag `0.6.1` 
+## Swift 4.2
+You can use CenterAlignedCollectionViewFlowLayout in Swift 2.2 by checking out tag `0.6.2` 
 
 # Usage
 You can set the collecion view's layout to an instance of `CenterAlignedCollectionViewFlowLayout`, that's all. You can set its layout both via code or `Storyboard`.
